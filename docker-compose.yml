@@ -26,12 +26,18 @@ services:
             - redis
             - meilisearch
             - selenium
+
     postgres:
         image: postgres:12.2
+        ports:
+            - 5432:5432
         environment:
             - POSTGRES_DB=${DB_DATABASE}
             - POSTGRES_USER=${DB_USERNAME}
             - POSTGRES_PASSWORD=${DB_PASSWORD}
+        networks:
+            - sail
+
     redis:
         image: 'redis:alpine'
         ports:
