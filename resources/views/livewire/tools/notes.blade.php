@@ -1,9 +1,7 @@
 <!-- Include stylesheet -->
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
-
-
-<div class="flex">
+<div class="flex w-full h-full">
     <div class="flex flex-col w-60 dark:bg-gray-900">
         <div class="flex items-center justify-center ">
             <div class="flex items-center">
@@ -21,7 +19,7 @@
     </div>
 
     <!-- the items i want to put in a 3 grid layout !-->
-    <div class="p-4 w-full">
+    <div class="flex flex-col w-full h-full m-0">
         <div id="editor">
             <p>Hello World!</p>
             <p>Some initial <strong>bold</strong> text</p>

@@ -21,11 +21,11 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="h-screen bg-white">
+        <div class="flex flex-col min-h-screen bg-white">
             @livewire('navigation-menu')
 
             <!-- Page Content -->
-            <main>
+            <main class="flex grow">
                 {{ $slot }}
             </main>
         </div>

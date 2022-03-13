@@ -965,6 +965,9 @@ select {
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
+.m-0 {
+  margin: 0px;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1083,6 +1086,9 @@ select {
 .h-20 {
   height: 5rem;
 }
+.h-full {
+  height: 100%;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1148,6 +1154,9 @@ select {
 }
 .shrink-0 {
   flex-shrink: 0;
+}
+.grow {
+  flex-grow: 1;
 }
 .origin-top-left {
   transform-origin: top left;
@@ -1253,6 +1262,9 @@ select {
 }
 .overflow-y-hidden {
   overflow-y: hidden;
+}
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 .truncate {
   overflow: hidden;
@@ -1711,6 +1723,9 @@ select {
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
+.ql-toolbar.ql-snow, .ql-container.ql-snow {
+    border: none !important;
+}
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -1898,14 +1913,14 @@ select {
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   }
 
-  .dark\:text-gray-500 {
-    --tw-text-opacity: 1;
-    color: rgb(107 114 128 / var(--tw-text-opacity));
-  }
-
   .dark\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-gray-500 {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity));
   }
 
   .dark\:text-gray-400 {
@@ -2157,6 +2172,11 @@ select {
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 

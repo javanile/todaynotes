@@ -7,7 +7,7 @@
     </x-slot>
     --}}
 
-    <div>
+    <div class="w-full">
         @livewire('tools.notes')
     </div>
 
