@@ -14,3 +14,6 @@ up: init
 
 migrate:
 	@./vendor/bin/sail artisan migrate
+
+create-tool:
+	@./vendor/bin/sail  artisan make:livewire tools/notes
