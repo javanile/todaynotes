@@ -75,6 +75,13 @@ services:
             - '/dev/shm:/dev/shm'
         networks:
             - sail
+    adminer:
+        image: adminer
+        ports:
+            - "9001:8080"
+        networks:
+            - sail
+
 networks:
     sail:
         driver: bridge

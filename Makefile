@@ -16,7 +16,13 @@ migrate:
 	@./vendor/bin/sail artisan migrate
 
 create-tool:
-	@./vendor/bin/sail  artisan make:livewire tools/notes
+	@./vendor/bin/sail artisan make:livewire tools/notes
+
+create-model:
+	@./vendor/bin/sail artisan make:model Notes
+
+create-migration:
+	@./vendor/bin/sail artisan make:migration create_notes_table
 
 watch:
 	@npm run watch
