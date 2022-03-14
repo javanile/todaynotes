@@ -4,7 +4,7 @@
 <div class="flex w-full h-full">
     <div class="flex flex-col w-60 border-r-2 border-gray-100 dark:bg-gray-900">
 
-        <nav class="flex flex-col p-0 mt-4 mr-0 ml-4 text-center">
+        <nav class="flex flex-col p-0 mt-4 mr-0 ml-4 text-center sticky top-20">
             <ul>
                 <li class="pr-4 bg-gray-50 font-bold border-2 border-r-0 border-gray-100 rounded-l-md">16/10/1981<li>
                 @foreach($notes as $note)
@@ -13,10 +13,11 @@
             </ul>
         </nav>
 
+        {{--
         <x-toggle-switch value="{{ 'Hello' }}">
             AA
         </x-toggle-switch>
-
+        --}}
     </div>
 
     <!-- the items i want to put in a 3 grid layout !-->
