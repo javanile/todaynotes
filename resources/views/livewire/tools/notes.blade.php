@@ -1,7 +1,7 @@
 <!-- Include stylesheet -->
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
-<div class="flex w-full h-full">
+<div  class="flex w-full h-full">
     <div class="flex flex-col w-60 border-r-2 border-gray-100 dark:bg-gray-900">
 
         <nav class="flex flex-col p-0 mt-4 mr-0 ml-4 text-center sticky top-20">
@@ -48,12 +48,33 @@
 <!-- Initialize Quill editor -->
 <script>
     var quill = new Quill('#editor', {
-        theme: 'snow'
+        theme: 'snow',
+        modules: {
+            keyboard: {
+                bindings: {
+                    custom: {
+                        key: 13,
+                        handler: function(range, context) {
+                            setTimeout(function () {
+                                let caret = document.getSelection().anchorNode;
+                                if (caret.nodeType != 1) {
+                                    caret = caret.parentNode;
+                                }
+                                if (caret.getBoundingClientRect().bottom >= window.innerHeight) {
+                                    caret.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            }, 100)
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
     });
 </script>
 
 <script>
-
+/*
     (function($) {
         $.fn.extend({
             toggleSwitch: function(){
@@ -74,5 +95,5 @@
     })(jQuery)
     $(document).ready(function(){
         $('.toggle-switch').toggleSwitch();
-    });
+    });*/
 </script>
