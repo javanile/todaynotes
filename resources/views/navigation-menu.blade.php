@@ -19,6 +19,12 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <div class="ml-3 pt-1 relative">
+                    <x-toggle-switch value="{{ 'Hello' }}">
+                        AA
+                    </x-toggle-switch>
+                </div>
+
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">

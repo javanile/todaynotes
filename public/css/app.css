@@ -1041,6 +1041,15 @@ select {
 .mb-4 {
   margin-bottom: 1rem;
 }
+.mr-0 {
+  margin-right: 0px;
+}
+.-ml-0\.5 {
+  margin-left: -0.125rem;
+}
+.-ml-0 {
+  margin-left: -0px;
+}
 .-mt-px {
   margin-top: -1px;
 }
@@ -1314,14 +1323,14 @@ select {
 .border-b {
   border-bottom-width: 1px;
 }
-.border-b-4 {
-  border-bottom-width: 4px;
+.border-r-2 {
+  border-right-width: 2px;
 }
 .border-r-0 {
   border-right-width: 0px;
 }
-.border-r-2 {
-  border-right-width: 2px;
+.border-b-4 {
+  border-bottom-width: 4px;
 }
 .border-gray-300 {
   --tw-border-opacity: 1;
@@ -1412,6 +1421,9 @@ select {
 .p-6 {
   padding: 1.5rem;
 }
+.p-0 {
+  padding: 0px;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1467,6 +1479,10 @@ select {
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .pt-6 {
   padding-top: 1.5rem;
@@ -1539,6 +1555,14 @@ select {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .font-medium {
   font-weight: 500;
@@ -1735,10 +1759,24 @@ select {
 .ql-toolbar.ql-snow, .ql-container.ql-snow {
     border: none !important;
 }
-.toggle-switch{width:40px;height:22px;position:relative;display:inline-block;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;border-radius:9999px;border:1px solid #f1f1f1;cursor:pointer}
+.ql-snow .ql-editor {
+    padding: 1rem !important;
+    line-height: 1.60 !important;
+    font-size: 1.0rem !important;
+}
+.ql-snow .ql-picker-label {
+    padding-left: 7px !important;
+}
+.ql-toolbar.ql-snow {
+    font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+.ql-container.ql-snow {
+    font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+.toggle-switch{width:40px;height:22px;position:relative;display:inline-block;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;border-radius:9999px;border:1px solid #dadada;cursor:pointer}
 .toggle-switch .toggle-handler{width:20px;height:20px;position:absolute;border-radius:20px;top:0;transition:all .2s ease-out}
 .toggle-switch .toggle-bg-on{width:40px;height:20px;background-color:#78b5e6;border-radius:9999px;position:absolute;top:0;left:0;transition:all .2s ease-out;transform-origin:0 50%}
-.toggle-switch.toggle-off .toggle-handler{background-color:#f1f1f1;transform:translateX(0);left:0}
+.toggle-switch.toggle-off .toggle-handler{background-color:#e1e1e1;transform:translateX(0);left:0}
 .toggle-switch.toggle-off .toggle-bg-on{visibility:hidden;opacity:.4;transform:scale(.8);width:50%}
 .toggle-switch.toggle-on .toggle-handler{background-color:#fff;transform:translateX(20px);box-shadow:1px 1px 2px #ccc}
 .toggle-switch.toggle-on .toggle-bg-on{visibility:visible;transform:scale(1);opacity:1;width:100%}
@@ -1929,14 +1967,14 @@ select {
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   }
 
-  .dark\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-
   .dark\:text-gray-500 {
     --tw-text-opacity: 1;
     color: rgb(107 114 128 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   .dark\:text-gray-400 {

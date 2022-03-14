@@ -6,4 +6,22 @@
     border: none !important;
 }
 
-.toggle-switch{width:40px;height:22px;position:relative;display:inline-block;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;-webkit-border-radius:9999px;-moz-border-radius:9999px;border-radius:9999px;border:1px solid #f1f1f1;cursor:pointer}.toggle-switch .toggle-handler{width:20px;height:20px;position:absolute;-webkit-border-radius:20px;-moz-border-radius:20px;border-radius:20px;top:0;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out}.toggle-switch .toggle-bg-on{width:40px;height:20px;background-color:#78b5e6;-webkit-border-radius:9999px;-moz-border-radius:9999px;border-radius:9999px;position:absolute;top:0;left:0;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out;transform-origin:0 50%}.toggle-switch.toggle-off .toggle-handler{background-color:#f1f1f1;-webkit-transform:translateX(0);-moz-transform:translateX(0);-ms-transform:translateX(0);-o-transform:translateX(0);transform:translateX(0);left:0}.toggle-switch.toggle-off .toggle-bg-on{visibility:hidden;opacity:.4;-webkit-transform:scale(.8);-moz-transform:scale(.8);-ms-transform:scale(.8);-o-transform:scale(.8);transform:scale(.8);width:50%}.toggle-switch.toggle-on .toggle-handler{background-color:#fff;-webkit-transform:translateX(20px);-moz-transform:translateX(20px);-ms-transform:translateX(20px);-o-transform:translateX(20px);transform:translateX(20px);-webkit-box-shadow:1px 1px 2px #ccc;-moz-box-shadow:1px 1px 2px #ccc;box-shadow:1px 1px 2px #ccc}.toggle-switch.toggle-on .toggle-bg-on{visibility:visible;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1);opacity:1;width:100%}
+.ql-snow .ql-editor {
+    padding: 1rem !important;
+    line-height: 1.60 !important;
+    font-size: 1.0rem !important;
+}
+
+.ql-snow .ql-picker-label {
+    padding-left: 7px !important;
+}
+
+.ql-toolbar.ql-snow {
+    font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.ql-container.ql-snow {
+    font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.toggle-switch{width:40px;height:22px;position:relative;display:inline-block;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;-webkit-border-radius:9999px;-moz-border-radius:9999px;border-radius:9999px;border:1px solid #dadada;cursor:pointer}.toggle-switch .toggle-handler{width:20px;height:20px;position:absolute;-webkit-border-radius:20px;-moz-border-radius:20px;border-radius:20px;top:0;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out}.toggle-switch .toggle-bg-on{width:40px;height:20px;background-color:#78b5e6;-webkit-border-radius:9999px;-moz-border-radius:9999px;border-radius:9999px;position:absolute;top:0;left:0;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out;transform-origin:0 50%}.toggle-switch.toggle-off .toggle-handler{background-color:#e1e1e1;-webkit-transform:translateX(0);-moz-transform:translateX(0);-ms-transform:translateX(0);-o-transform:translateX(0);transform:translateX(0);left:0}.toggle-switch.toggle-off .toggle-bg-on{visibility:hidden;opacity:.4;-webkit-transform:scale(.8);-moz-transform:scale(.8);-ms-transform:scale(.8);-o-transform:scale(.8);transform:scale(.8);width:50%}.toggle-switch.toggle-on .toggle-handler{background-color:#fff;-webkit-transform:translateX(20px);-moz-transform:translateX(20px);-ms-transform:translateX(20px);-o-transform:translateX(20px);transform:translateX(20px);-webkit-box-shadow:1px 1px 2px #ccc;-moz-box-shadow:1px 1px 2px #ccc;box-shadow:1px 1px 2px #ccc}.toggle-switch.toggle-on .toggle-bg-on{visibility:visible;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1);opacity:1;width:100%}
