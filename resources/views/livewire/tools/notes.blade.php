@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div id="editor" class="py-0 m-0 font-sans">
+        <div id="editor" class="py-0 m-0">
             <p>Hello World!</p>
             <p>Some initial <strong>bold</strong> text</p>
             <p><br></p>
