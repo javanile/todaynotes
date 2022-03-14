@@ -1263,9 +1263,6 @@ select {
 .overflow-y-hidden {
   overflow-y: hidden;
 }
-.overflow-y-scroll {
-  overflow-y: scroll;
-}
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1319,6 +1316,12 @@ select {
 }
 .border-b-4 {
   border-bottom-width: 4px;
+}
+.border-r-0 {
+  border-right-width: 0px;
+}
+.border-r-2 {
+  border-right-width: 2px;
 }
 .border-gray-300 {
   --tw-border-opacity: 1;
@@ -1732,6 +1735,13 @@ select {
 .ql-toolbar.ql-snow, .ql-container.ql-snow {
     border: none !important;
 }
+.toggle-switch{width:40px;height:22px;position:relative;display:inline-block;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;border-radius:9999px;border:1px solid #f1f1f1;cursor:pointer}
+.toggle-switch .toggle-handler{width:20px;height:20px;position:absolute;border-radius:20px;top:0;transition:all .2s ease-out}
+.toggle-switch .toggle-bg-on{width:40px;height:20px;background-color:#78b5e6;border-radius:9999px;position:absolute;top:0;left:0;transition:all .2s ease-out;transform-origin:0 50%}
+.toggle-switch.toggle-off .toggle-handler{background-color:#f1f1f1;transform:translateX(0);left:0}
+.toggle-switch.toggle-off .toggle-bg-on{visibility:hidden;opacity:.4;transform:scale(.8);width:50%}
+.toggle-switch.toggle-on .toggle-handler{background-color:#fff;transform:translateX(20px);box-shadow:1px 1px 2px #ccc}
+.toggle-switch.toggle-on .toggle-bg-on{visibility:visible;transform:scale(1);opacity:1;width:100%}
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
