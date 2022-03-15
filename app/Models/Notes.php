@@ -69,4 +69,11 @@ class Notes extends Model
 
         return $notes;
     }
+
+    public static function updateContent($nid, $content)
+    {
+        Notes::where('id', $nid)->update([
+            'content' => $content
+        ]);
+    }
 }

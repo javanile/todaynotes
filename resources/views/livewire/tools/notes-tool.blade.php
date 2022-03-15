@@ -7,7 +7,7 @@
     <div class="flex flex-col w-60 border-r-2 border-gray-100 dark:bg-gray-900">
 
         <nav class="flex flex-col p-0 mt-4 mr-0 ml-4 text-center sticky top-20">
-            <input id="nid" wire:model="nid">
+            <input type="hidden" id="nid" wire:model="nid">
 
             <ul>
                 <li class="pr-4 bg-gray-50 font-bold border-2 border-r-0 border-gray-100 rounded-l-md">16/10/1981 {{ $total }}<li>

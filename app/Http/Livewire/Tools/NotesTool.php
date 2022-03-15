@@ -59,6 +59,9 @@ class NotesTool extends Component
         if (empty($args['nid'])) {
             $notes = Notes::setCurrent($args['content']);
             $this->nid = $notes->id;
+        } else {
+            Notes::updateContent($args['nid'], $args['content']);
+            $this->nid = $args['nid'];
         }
 
         //$this->total = 2;
