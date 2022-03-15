@@ -35,6 +35,8 @@ services:
             - POSTGRES_DB=${DB_DATABASE}
             - POSTGRES_USER=${DB_USERNAME}
             - POSTGRES_PASSWORD=${DB_PASSWORD}
+        volumes:
+            - sail-postgres:/var/lib/postgresql/data
         networks:
             - sail
 
@@ -86,7 +88,7 @@ networks:
     sail:
         driver: bridge
 volumes:
-    sail-mysql:
+    sail-postgres:
         driver: local
     sail-redis:
         driver: local
