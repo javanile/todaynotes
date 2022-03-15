@@ -26,3 +26,16 @@ create-migration:
 
 watch:
 	@npm run watch
+
+## =======
+## Website
+## =======
+build-welcome:
+	#@cd contrib/website && npm run dist
+	@cp contrib/website/dist/index.html resources/views/welcome.blade.php
+	@cp -fR contrib/website/dist/assets public/
+	@cp -fR contrib/website/dist/vendor public/
+	@cp -fR contrib/website/dist/css public/
+
+watch-website:
+	@cd contrib/website && npm run serve
