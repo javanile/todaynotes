@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('team_id')->index();
-            $table->string('title');
+            $table->date('day');
+            $table->string('title')->nullable();
             $table->string('content');
             $table->boolean('marked');
             $table->timestamps();

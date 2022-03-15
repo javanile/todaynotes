@@ -8,7 +8,7 @@
     --}}
 
     <div class="w-full">
-        @livewire('tools.notes')
+        @livewire('tools.notes-tool')
     </div>
 
     {{--

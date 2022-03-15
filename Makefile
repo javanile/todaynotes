@@ -27,6 +27,15 @@ create-migration:
 watch:
 	@npm run watch
 
+## =========
+## Migration
+## =========
+migrate-refresh-1: migrate-rollback-1 migrate
+
+migrate-rollback-1:
+	@./vendor/bin/sail artisan migrate:rollback --step=1
+
+
 ## =======
 ## Website
 ## =======

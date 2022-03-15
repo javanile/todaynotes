@@ -3,8 +3,10 @@
 namespace App\Http\Livewire\Tools;
 
 use Livewire\Component;
+use Auth;
+use App\Models\Notes;
 
-class Notes extends Component
+class NotesTool extends Component
 {
     public $nid;
 
@@ -27,7 +29,7 @@ class Notes extends Component
 
     public function render()
     {
-        return view('livewire.tools.notes');
+        return view('livewire.tools.notes-tool');
     }
 
     public function increment()
@@ -51,11 +53,23 @@ class Notes extends Component
     public function sync($args)
     {
         if (empty($args['nid'])) {
-
+            $day = date('Y-m-d');
+            $teamId = Auth::user()->currentTeam->id;
+            $notes = Notes::where('day', '=', $day)
+                ->where('team_id', '=', $teamId)
+                ->first();
+            if (empty($notes)) {
+                $notes = Notes::create([
+                    'day' => $day,
+                    'team_id' => $teamId,
+                    'content' => $args['content'],
+                ]);
+            }
         }
 
-        $this->total = 2;
-        $this->tagline = json_encode($args);
+
+        //$this->total = 2;
+        //$this->tagline = json_encode($args);
         $this->loadNotes();
     }
 }
