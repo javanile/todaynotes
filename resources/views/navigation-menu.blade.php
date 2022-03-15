@@ -20,9 +20,12 @@
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <div class="ml-3 pt-1 relative">
+                    {{--
+                    Dark mode button
                     <x-toggle-switch value="{{ 'Hello' }}">
                         AA
                     </x-toggle-switch>
+                    --}}
                 </div>
 
                 <!-- Teams Dropdown -->

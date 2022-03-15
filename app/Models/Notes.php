@@ -27,12 +27,17 @@ class Notes extends Model
      * @var array
      */
     protected $appends = [
-        'title',
+        'title', 'label'
     ];
 
     public function getTitleAttribute()
     {
         return 'title';
+    }
+
+    public function getLabelAttribute()
+    {
+        return $this->day;
     }
 
     public static function getCurrent()
@@ -75,5 +80,18 @@ class Notes extends Model
         Notes::where('id', $nid)->update([
             'content' => $content
         ]);
+    }
+
+    public static function loadList()
+    {
+        $teamId = Auth::user()->currentTeam->id;
+        $notesList = self::where('team_id', '=', $teamId)->orderBy('day', 'desc')->get();
+
+        if ($notesList->isEmpty()) {
+            $notes = new Notes();
+            $notesList->push($notes);
+        }
+
+        return $notesList;
     }
 }

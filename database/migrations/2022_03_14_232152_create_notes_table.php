@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('team_id')->index();
             $table->date('day');
             //$table->string('title')->nullable();
-            $table->string('content');
+            $table->text('content');
             $table->boolean('marked')->default(0);
             $table->timestamps();
         });

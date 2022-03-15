@@ -44,14 +44,15 @@ class NotesTool extends Component
 
     public function loadNotesList()
     {
-        $this->notes = [
-            (object)[
-                'title' => 'Caio'
-            ],
-            (object)[
-                'title' => 'Caio'
-            ],
-        ];
+        $this->notes = Notes::loadList();
+    }
+
+    public function editNotes($nid)
+    {
+        $notes = Notes::find($nid);
+        $this->nid = $nid;
+        $this->loadNotesList();
+        $this->dispatchBrowserEvent('notes-open', ['content' => $notes->content]);
     }
 
     public function sync($args)

@@ -10,14 +10,21 @@
             <input type="hidden" id="nid" wire:model="nid">
 
             <ul>
-                <li class="pr-4 bg-gray-50 font-bold border-2 border-r-0 border-gray-100 rounded-l-md">16/10/1981 {{ $total }}<li>
+                {{--
+                <li class="">16/10/1981 {{ $total }}<li>
+                --}}
                 @foreach($notes as $note)
-                    <li>{{ $note->title }}<li>
+                    <li class="pr-4 border-2 border-r-0 {{ $note->id == $nid ? 'bg-gray-50 font-bold border-gray-100 rounded-l-md' : 'border-white' }}">
+                        <a wire:click="editNotes({{ $note->id }})" href="#">
+                            {{ $note->label }}
+                        </a>
+                    <li>
                 @endforeach
             </ul>
-            <button wire:click="increment">Ciao</button>
 
-            {{ $tagline }}
+            {{--
+            <button wire:click="increment">Ciao</button>
+            --}}
         </nav>
 
         {{--
@@ -87,6 +94,11 @@
                 content: document.getElementById('buffer').value
             });
         }, 2500);
+
+        window.addEventListener('notes-open', event => {
+            quill.root.innerHTML = event.detail.content;
+            document.getElementById('buffer').value = event.detail.content;
+        })
 
     </script>
 
