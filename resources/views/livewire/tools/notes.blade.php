@@ -1,16 +1,18 @@
-<!-- Include stylesheet -->
-<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
 <div  class="flex w-full h-full">
+    <!-- Include stylesheet -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
     <div class="flex flex-col w-60 border-r-2 border-gray-100 dark:bg-gray-900">
 
         <nav class="flex flex-col p-0 mt-4 mr-0 ml-4 text-center sticky top-20">
             <ul>
-                <li class="pr-4 bg-gray-50 font-bold border-2 border-r-0 border-gray-100 rounded-l-md">16/10/1981<li>
+                <li class="pr-4 bg-gray-50 font-bold border-2 border-r-0 border-gray-100 rounded-l-md">16/10/1981 {{ $total }}<li>
                 @foreach($notes as $note)
                     <li>{{ $note->title }}<li>
                 @endforeach
             </ul>
+            <button wire:click="increment">Ciao</button>
         </nav>
 
         {{--
@@ -38,62 +40,74 @@
             <p>Some initial <strong>bold</strong> text</p>
             <p><br></p>
         </div>
+
+        <textarea id="buffer"></textarea>
+
     </div>
-</div>
 
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
-<!-- Include the Quill library -->
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
-<!-- Initialize Quill editor -->
-<script>
-    var quill = new Quill('#editor', {
-        theme: 'snow',
-        modules: {
-            keyboard: {
-                bindings: {
-                    custom: {
-                        key: 13,
-                        handler: function(range, context) {
-                            setTimeout(function () {
-                                let caret = document.getSelection().anchorNode;
-                                if (caret.nodeType != 1) {
-                                    caret = caret.parentNode;
-                                }
-                                if (caret.getBoundingClientRect().bottom >= window.innerHeight) {
-                                    caret.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                }
-                            }, 100)
-                            return true;
+    <!-- Initialize Quill editor -->
+    <script>
+        var quill = new Quill('#editor', {
+            theme: 'snow',
+            modules: {
+                keyboard: {
+                    bindings: {
+                        custom: {
+                            key: 13,
+                            handler: function(range, context) {
+                                setTimeout(function () {
+                                    let caret = document.getSelection().anchorNode;
+                                    if (caret.nodeType != 1) {
+                                        caret = caret.parentNode;
+                                    }
+                                    if (caret.getBoundingClientRect().bottom >= window.innerHeight) {
+                                        caret.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    }
+                                }, 100)
+                                return true;
+                            }
                         }
                     }
                 }
             }
-        }
-    });
-</script>
+        });
 
-<script>
-/*
-    (function($) {
-        $.fn.extend({
-            toggleSwitch: function(){
+        quill.on('text-change', function(delta, oldDelta, source) {
+            document.getElementById('buffer').value = quill.root.innerHTML;
+        });
+
+        setInterval(function () {
+            console.log("EMIT");
+            Livewire.emit('sync');
+        }, 2500);
+
+    </script>
+
+    <script>
+        /*
+            (function($) {
+                $.fn.extend({
+                    toggleSwitch: function(){
 
 
-                $('.toggle-switch').on('click',function(){
-                    if($(this).hasClass('toggle-off')){
-                        $(this).removeClass('toggle-off').addClass('toggle-on')
-                    }else{
-                        $(this).removeClass('toggle-on').addClass('toggle-off')
+                        $('.toggle-switch').on('click',function(){
+                            if($(this).hasClass('toggle-off')){
+                                $(this).removeClass('toggle-off').addClass('toggle-on')
+                            }else{
+                                $(this).removeClass('toggle-on').addClass('toggle-off')
+                            }
+
+                        })
+
+
                     }
-
                 })
-
-
-            }
-        })
-    })(jQuery)
-    $(document).ready(function(){
-        $('.toggle-switch').toggleSwitch();
-    });*/
-</script>
+            })(jQuery)
+            $(document).ready(function(){
+                $('.toggle-switch').toggleSwitch();
+            });*/
+    </script>
+</div>
