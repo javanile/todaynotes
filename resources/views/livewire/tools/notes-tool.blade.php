@@ -41,14 +41,10 @@
         </div>
 
         <div wire:ignore>
-            <div id="editor" class="py-0 m-0">
-                <p>Hello World!</p>
-                <p>Some initial <strong>bold</strong> text</p>
-                <p><br></p>
-            </div>
+            <div id="editor" class="py-0 m-0">{!! $content !!}</div>
         </div>
 
-        <textarea id="buffer"></textarea>
+        <textarea id="buffer" class="hidden">{{ $content }}</textarea>
     </div>
 
     <!-- Include the Quill library -->

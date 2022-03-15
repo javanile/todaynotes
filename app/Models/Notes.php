@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Notes extends Model
 {
@@ -32,5 +33,40 @@ class Notes extends Model
     public function getTitleAttribute()
     {
         return 'title';
+    }
+
+    public static function getCurrent()
+    {
+        $day = date('Y-m-d');
+        $teamId = Auth::user()->currentTeam->id;
+        $notes = self::where('day', '=', $day)
+            ->where('team_id', '=', $teamId)
+            ->first();
+        if (empty($notes)) {
+            $notes = Notes::create([
+                'day' => $day,
+                'team_id' => $teamId,
+                'content' => '',
+            ]);
+        }
+        return $notes;
+    }
+
+    public static function setCurrent($content)
+    {
+        $day = date('Y-m-d');
+        $teamId = Auth::user()->currentTeam->id;
+        $notes = Notes::where('day', '=', $day)
+        ->where('team_id', '=', $teamId)
+        ->first();
+        if (empty($notes)) {
+            $notes = Notes::create([
+            'day' => $day,
+            'team_id' => $teamId,
+            'content' => $content,
+            ]);
+        }
+
+        return $notes;
     }
 }

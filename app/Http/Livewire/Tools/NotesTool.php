@@ -24,7 +24,11 @@ class NotesTool extends Component
 
     public function mount()
     {
-        $this->loadNotes();
+        $notes = Notes::getCurrent();
+        $this->nid = $notes->id;
+        $this->content = $notes->content;
+
+        $this->loadNotesList();
     }
 
     public function render()
@@ -34,11 +38,11 @@ class NotesTool extends Component
 
     public function increment()
     {
-        $this->loadNotes();
+        $this->loadNotesList();
         $this->total = $this->total + 1;
     }
 
-    public function loadNotes()
+    public function loadNotesList()
     {
         $this->notes = [
             (object)[
@@ -53,23 +57,12 @@ class NotesTool extends Component
     public function sync($args)
     {
         if (empty($args['nid'])) {
-            $day = date('Y-m-d');
-            $teamId = Auth::user()->currentTeam->id;
-            $notes = Notes::where('day', '=', $day)
-                ->where('team_id', '=', $teamId)
-                ->first();
-            if (empty($notes)) {
-                $notes = Notes::create([
-                    'day' => $day,
-                    'team_id' => $teamId,
-                    'content' => $args['content'],
-                ]);
-            }
+            $notes = Notes::setCurrent($args['content']);
+            $this->nid = $notes->id;
         }
-
 
         //$this->total = 2;
         //$this->tagline = json_encode($args);
-        $this->loadNotes();
+        $this->loadNotesList();
     }
 }
