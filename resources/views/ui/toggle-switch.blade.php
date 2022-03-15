@@ -11,7 +11,6 @@
 <script>
     document.addEventListener('livewire:load', function () {
         Livewire.on('toggle1', (event) => {
-            console.log("A");
             let button = event.target;
             if (button.className == 'toggle-handler') {
                 button = button.parentNode;
