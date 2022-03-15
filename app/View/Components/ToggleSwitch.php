@@ -10,4 +10,9 @@ class ToggleSwitch extends Component
     {
         return view('ui.toggle-switch');
     }
+
+    public function toggle() {
+        dd($_SERVER);
+    }
+
 }

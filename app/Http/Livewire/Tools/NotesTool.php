@@ -42,6 +42,12 @@ class NotesTool extends Component
         $this->total = $this->total + 1;
     }
 
+    public function toggle()
+    {
+        $this->loadNotesList();
+        $this->total = $this->total + 1;
+    }
+
     public function loadNotesList()
     {
         $this->notes = Notes::loadList();

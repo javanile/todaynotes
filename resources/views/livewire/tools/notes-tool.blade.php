@@ -95,6 +95,7 @@
             });
         }, 2500);
 
+
         window.addEventListener('notes-open', event => {
             quill.root.innerHTML = event.detail.content;
             document.getElementById('buffer').value = event.detail.content;
@@ -102,28 +103,4 @@
 
     </script>
 
-    <script>
-        /*
-            (function($) {
-                $.fn.extend({
-                    toggleSwitch: function(){
-
-
-                        $('.toggle-switch').on('click',function(){
-                            if($(this).hasClass('toggle-off')){
-                                $(this).removeClass('toggle-off').addClass('toggle-on')
-                            }else{
-                                $(this).removeClass('toggle-on').addClass('toggle-off')
-                            }
-
-                        })
-
-
-                    }
-                })
-            })(jQuery)
-            $(document).ready(function(){
-                $('.toggle-switch').toggleSwitch();
-            });*/
-    </script>
 </div>
