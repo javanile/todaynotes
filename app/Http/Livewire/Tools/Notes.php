@@ -6,13 +6,19 @@ use Livewire\Component;
 
 class Notes extends Component
 {
+    public $nid;
+
     public $name = "Ciao";
 
     public $total;
 
     public $notes;
 
-    //public $listeners = ['sync'];
+    public $content;
+
+    public $tagline;
+
+    public $listeners = ['sync'];
 
     public function mount()
     {
@@ -42,23 +48,14 @@ class Notes extends Component
         ];
     }
 
-
-    public function sync()
+    public function sync($args)
     {
+        if (empty($args['nid'])) {
+
+        }
+
         $this->total = 2;
-        $this->notes = [
-            (object)[
-                'title' => 'Caio'
-            ],
-            (object)[
-                'title' => 'Caio'
-            ],
-            (object)[
-                'title' => 'Caio'
-            ],
-            (object)[
-                'title' => 'Caio'
-            ],
-        ];
+        $this->tagline = json_encode($args);
+        $this->loadNotes();
     }
 }

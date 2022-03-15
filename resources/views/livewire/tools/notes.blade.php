@@ -1,11 +1,14 @@
 
 <div  class="flex w-full h-full">
+
     <!-- Include stylesheet -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
     <div class="flex flex-col w-60 border-r-2 border-gray-100 dark:bg-gray-900">
 
         <nav class="flex flex-col p-0 mt-4 mr-0 ml-4 text-center sticky top-20">
+            <input id="nid" wire:model="nid">
+
             <ul>
                 <li class="pr-4 bg-gray-50 font-bold border-2 border-r-0 border-gray-100 rounded-l-md">16/10/1981 {{ $total }}<li>
                 @foreach($notes as $note)
@@ -13,6 +16,8 @@
                 @endforeach
             </ul>
             <button wire:click="increment">Ciao</button>
+
+            {{ $tagline }}
         </nav>
 
         {{--
@@ -44,7 +49,6 @@
         </div>
 
         <textarea id="buffer"></textarea>
-
     </div>
 
     <!-- Include the Quill library -->
@@ -82,8 +86,10 @@
         });
 
         setInterval(function () {
-            console.log("EMIT");
-            Livewire.emit('sync');
+            Livewire.emit('sync', {
+                nid: document.getElementById('nid').value,
+                content: document.getElementById('buffer').value
+            });
         }, 2500);
 
     </script>
