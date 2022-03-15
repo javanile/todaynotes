@@ -16,7 +16,22 @@ class Notes extends Component
 
     public function mount()
     {
-        $this->total = 1;
+        $this->loadNotes();
+    }
+
+    public function render()
+    {
+        return view('livewire.tools.notes');
+    }
+
+    public function increment()
+    {
+        $this->loadNotes();
+        $this->total = $this->total + 1;
+    }
+
+    public function loadNotes()
+    {
         $this->notes = [
             (object)[
                 'title' => 'Caio'
@@ -27,15 +42,6 @@ class Notes extends Component
         ];
     }
 
-    public function render()
-    {
-        return view('livewire.tools.notes');
-    }
-
-    public function increment()
-    {
-        $this->total = $this->total + 1;
-    }
 
     public function sync()
     {
