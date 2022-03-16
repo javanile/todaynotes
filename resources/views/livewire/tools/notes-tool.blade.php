@@ -37,7 +37,7 @@
     <!-- the items i want to put in a 3 grid layout !-->
     <div class="flex flex-col w-full h-full m-0 ml-4">
         <div class="pt-6 pb-4 px-4">
-            <h2 class="text-gray-400 -ml-0.5 text-4xl font-bold font-italic">
+            <h2 class="text-gray-400 text-2xl font-bold font-italic">
                 Monday, March 14, 2022 - Personal Notes
 
                 <x-toggle-switch></x-toggle-switch>
