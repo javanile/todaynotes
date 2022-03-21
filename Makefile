@@ -39,8 +39,10 @@ migrate-rollback-1:
 ## =======
 ## Website
 ## =======
-build-welcome:
-	#@cd contrib/website && npm run dist
+dist-website:
+	@cd contrib/website && npm run dist
+
+build-welcome: dist-website
 	@cp contrib/website/dist/index.html resources/views/welcome.blade.php
 	@cp -fR contrib/website/dist/assets public/
 	@cp -fR contrib/website/dist/vendor public/
