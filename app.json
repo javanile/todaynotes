@@ -4,4 +4,12 @@
   "repository": "https://github.com/javanile/todaynotes",
   "logo": "https://github.com/javanile/todaynotes/raw/main/public/images/todaynotes.png",
   "keywords": ["music notes", "google keep", "onenote", "notepad", "notes pad", "notes", "spark notes", "ever note", "online notepad", "bass clef notes", "musical notes", "piano notes", "google notes", "league patch notes", "apex legends patch notes", "end note", "notability", "smite patch notes", "goodnotes", "cliff notes", "microsoft onenote", "milanotes", "apex patch notes", "key notes", "tft patch notes", "lol patch notes", "note taking", "sticky notes", "overwatch patch notes", "cornell notes", "one note online", "patch notes", "therapy notes", "league of legends patch notes", "guitar notes", "patch notes league", "fortnite patch notes", "treble clef notes", "simplenote", "digital notebook", "ffxiv patch notes", "notes on a piano", "800 notes", "notes app", "thank you notes", "guitar string notes", "sims 4 patch notes", "post it notes", "cornell notes template"]
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12.2"
+      }
+    }
+  ]
 }
