@@ -27,6 +27,15 @@ create-migration:
 watch:
 	@npm run watch
 
+## ===
+## Git
+## ===
+
+push:
+	@git add .
+	@git commit -am "Release"
+	@git push
+
 ## =========
 ## Migration
 ## =========
