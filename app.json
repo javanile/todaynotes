@@ -20,10 +20,6 @@
     "APP_DEBUG": {
       "description": "Enable/Disable debug mode",
       "value": "0"
-    },
-    "DATABASE_URL": {
-      "description": "Database connection string",
-      "value": "postgres://username:password@host:5432/database"
     }
   },
   "addons": [
