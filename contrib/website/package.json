@@ -1,7 +1,7 @@
 {
     "name": "swipe-bootstrap-5-template",
     "version": "1.1.0",
-    "description": "Swipe - Mobile App One Page Bootstrap 5 Template",
+    "description": "TodayNotes website",
     "main": "gulpfile.js",
     "author": "Themesberg",
     "keywords": [
@@ -22,6 +22,7 @@
     "scripts": {
         "build": "gulp build:dev",
         "serve": "gulp serve",
+        "watch": "npm run serve",
         "dist": "gulp build:dist"
     },
     "devDependencies": {

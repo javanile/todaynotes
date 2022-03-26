@@ -26,7 +26,7 @@
     &.btn-pill{
         @include border-radius($border-radius-xl);
     }
-	
+
 }
 
 // Sizes
@@ -46,6 +46,18 @@
 .btn-md {
     &, span {
         font-size: $font-size-md !important;
+    }
+}
+
+.btn-lg {
+    &, span {
+        font-size: $font-size-lg !important;
+    }
+}
+
+.btn-xl {
+    &, span {
+        font-size: $font-size-xl !important;
     }
 }
 
@@ -107,7 +119,7 @@
 			font-size: 1.25rem;
 		}
     }
-    
+
     @include media-breakpoint-down(sm) {
         font-size: .8rem;
     }
@@ -121,7 +133,7 @@
 }
 
 
-// Brand (social) buttons 
+// Brand (social) buttons
 @each $color, $value in $brand-colors {
     .btn-#{$color} {
         @include button-variant($value, $value);

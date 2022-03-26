@@ -4,6 +4,7 @@
 
 .text-underline { text-decoration: underline !important; }
 .text-through { text-decoration: line-through !important; }
+.text-strong { font-weight: bold !important; }
 
 // Display responsive styles
 @each $breakpoint in map-keys($grid-breakpoints) {
